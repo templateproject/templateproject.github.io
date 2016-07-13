@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Miminium Admin Template v.1">
+  <meta name="author" content="Isna Nur Azis">
+  <meta name="keyword" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>İstatistik Güdümlü Seçkili Bir Bilgi Erişim Sistemi Tasarımı (SBES)</title>
+
+  <!-- start: Css -->
+  <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
+
+  <!-- plugins -->
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/font-awesome.min.css"/>
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/animate.min.css"/>
+  <link href="asset/css/style.css" rel="stylesheet">
+
+  <!-- end: Css -->
+
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <!-- <script>
+
+   function highlightSearch() {
+    var text = document.getElementById("query").value;
+    var query = new RegExp("(\\b" + text + "\\b)", "gim");
+    var e = document.getElementById("content").innerHTML;
+    var enew = e.replace(/(<span>|<\/span>)/igm, "");
+    document.getElementById("content").innerHTML = enew;
+    var newe = enew.replace(query, "<span>$1</span>");
+    document.getElementById("content").innerHTML = newe;
+  }
+   </script>-->
+  </head>
+
+  <body id="mimin" class="dashboard">
+    <!-- start: Header -->
+
+        <nav id="top-navbar-header" class="navbar navbar-default header navbar-fixed-top">
+          <div class="col-md-12 nav-wrapper">
+            <div class="navbar-header" style="width:100%;">
+              <div class="opener-left-menu is-open">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+              </div>
+              <div class="nav navbar-nav">
+                <a href="index.html" class="navbar-brand">
+                 <b class ="title">İstatistik Güdümlü Seçkili Bir Bilgi Erişim Sistemi Tasarımı (SBES)</b>
+                </a>
+              </div>
+              <!--<ul class="nav navbar-nav search-nav">
+                <li>
+                   <div class="search">
+
+                    <button class="btn btn-default" type="button" onClick="highlightSearch()">
+                                      <span class="fa fa-search icon-search" style="font-size:23px;"></span>
+                                    </button>
+                    <div class="form-group form-animate-text">
+                      <input type="text" class="form-text" required id ="query">
+                      <span class="bar"></span>
+                      <label class="label-search"><b>Search</b> </label>
+                    </div>
+                  </div>
+                </li>
+              </ul>-->
+
+              <ul class="nav navbar-nav navbar-right user-nav">
+                <li class="logo"><img src="asset/img/logo.png" class="img-responsive" id ="mulogo"></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      <!-- end: Header -->
+
+      <div class="container-fluid mimin-wrapper">
+
+        <!-- start:Left Menu -->
+        <div id="left-menu">
+          <div id="sub-left-menu-div" class="sub-left-menu scroll">
+            <ul class="nav nav-list">
+
+
+              <li class="ripple">
+                <a href="index.html" ><span class="fa fa-home"></span> Ana Sayfa
+                </a>
+              </li>
+              <li class="active ripple">
+                <a href="pages/members.html" class="tree-toggle nav-header">
+                  <span class="fa fa-group"></span> Üyeler
+                </a>
+              </li>
+              <li class="active ripple">
+                <a href="pages/events.html" class="tree-toggle nav-header">
+                  <span class="fa fa-calendar"></span> Etkinlikler
+                </a>
+              </li>
+              <li class="active ripple"><a href="pages/researches.html" class="tree-toggle nav-header">
+                <span class="fa fa-pencil-square"></span> İçerik  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
+                <ul class="nav nav-list tree">
+                  <li ><a href="#konu" id="deneme"> Konu</a></li>
+                  <li><a href="#trtkyc"> Trec Robust Kapsamında Yapılan Çalışmalar</a></li>
+                  <li><a href="#kapsam"> Kapsam</a></li>
+                  <li><a href="#sbeuyc"> Seçkili Bilgi Erişim Üzerine Yapılmış Çalışmalar</a></li>
+                </ul>
+              </li>
+              <li class="active ripple"><a href="pages/publications.html" class="tree-toggle nav-header"><span class="fa fa-book"></span> Yayınlar  </a>
+              </li>
+              <li class="active ripple"><a href="pages/resources.html" class="tree-toggle nav-header"><span class="fa fa-folder-open"></span> Kaynaklar  </a>
+              </li>
+              <li class="active ripple"><a href="pages/links.html"><span class="fa fa-link"></span> İlgili Linkler</a></li>
+              <li class="active ripple"><a href="pages/jobs.html" class="tree-toggle nav-header"><span class="fa fa-briefcase"></span> Bursiyer/İş  </a>
+              </li>
+               <li class="active ripple"><a href="pages/contact.html" class="tree-toggle nav-header"><span class="fa fa-envelope"></span> İletişim </a>
+              </li>
+
+            </ul>
+            <div class="lang-icon">
+              <ul>
+                <li><a href="index.html"><img src="asset/img/tr.png"></a></li>
+                <li><a href="en.html"><img src="asset/img/en.png"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- end: Left Menu -->
+
+
+        <!-- start: Content -->
+        <div id="content" class="article-v1">
+            <div class="panel box-shadow-none content-header">
+                <div class="panel-body" id="paneltop">
+                  <div class="col-md-12" id="titlecolor">
+                      <h3 class="animated fadeInLeft">PROJE ÖZETİ</h3>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="pagecontent">
+              <div class="panel">
+                <div class="pull-right article-v1-time">
+                  <em> Information Retrieval Group</em>
+                </div>
+                  <div class="panel-body">
+                    <div class="col-md-12  article-v1-body">
+                      <p>
+                         Klasik/Geleneksel bilgi erişimde her sorgu için aynı erişim stratejisi kullanır. Fakat her erişim stratejisinin başarımı bazı sorgularda yüksek bazı sorgularda da düşüktür – başarımın gürbüzlüğü problemi.  Diğer taraftan bir erişim stratejisinin başarımının düşük olduğu bir sorgu için diğer tüm erişim stratejilerinin başarımı da düşük olmak zorunda değildir: herhangi bir sorgu için tatminkâr düzeyde başarım sağlayacak bir erişim stratejisini mevcut teknolojiler içinde bulmak mümkündür. Seçkili bilgi erişim fikri bu (deneysel) gerçeğe dayanır. Kuramsal olarak seçkili bilgi erişim klasik bilgi erişime nazaran ortalamada iki, hatta üç, kat başarım artışı ve her sorguda tatminkâr düzeyde başarım vadeder. Böylesi bir potansiyel mevcut başka hiçbir bilgi erişim teknolojisi tarafından vaat edilmemektedir. Fakat ne yazık ki bu potansiyel halen pratiğe dökülememiştir. Bu alandaki çalışmalar nispeten yenidir ve eşik düzeyde olgunluğa kavuşmadığı için şimdilik sadece akademi tarafında yürütülmektedir. Ancak ilk çalışmaların yapıldığı 2003 ila 2005 yıllarından sonra, “Risk-Sensitive Evaluation” adı altında, 2013 yılında tekrar TREC çalışması içine dâhil edilmesi, seçkili bilgi erişimin endüstrideki yansımalarının da yakın gelecekte görüleceğinin bir göstergesidir.
+                      </p>
+                      <p>Proje;</p>
+                      <ul class="list">
+                        <li>istatistik güdümlü özgün bir seçkili bilgi erişim sistem tasarımı ortaya koymayı,</li>
+                        <li>verilen her sorgu için en yüksek başarımı gösterecek olan erişim stratejisini yüksek doğrulukla belirlemeyi,</li>
+                      </ul>
+                      <p>hedeflemektedir. Önerilen seçkili bilgi erişim sistem tasarımının özgün değer ve özgün katkı sağlayacak olan özellikleri aşağıdaki gibi sıralanabilir: </p>
+                      <ul class="list">
+                          <li>bilgi erişim sistem bileşenleri (ön-işlem, eşleştirme ve art-işlem) arasındaki etkileşimin strateji seçiminde hesaba katılması,</li>
+                          <li>en uygun erişim stratejisinin dinamik şekilde baştan sona sorgu bazında yapılandırılması,</li>
+                          <li>aralarından seçim yapılacak aday teknoloji sayısının zenginliği,</li>
+                          <li>terim ağırlıklandırma modellerine özel yeni sorgu özniteliklerinin geliştirilmesi.</li>
+                      </ul>
+                      <p>Projenin özgün bir çalışma olması nedeni ile başarılı sonuçlanması durumunda ticari ürüne dönüştürülmesi mümkündür. Çalışma kapsamında elde edilecek bilgi birikiminin yerli bir firma/şirkete verilmesi durumunda uluslararası rekabette avantaj sağlayabilecektir. Oluşacak ürün genel anlamda bilgi erişim sistemlerinin çekirdeğini oluşturduğu için e-ticaret uygulamalarında mevcudiyet göstermesi mümkündür.</p>
+                      <p><b>Anahtar Kelimeler: Seçkili Bilgi Erişim, Bilgi Erişim, Bilgi Erişimde Başarım Gürbüzlüğü Problemi</b></p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- end: content -->
+      </div>
+
+      <!-- start: Mobile -->
+      <div id="mimin-mobile" class="reverse">
+        <div class="mimin-mobile-menu-list">
+            <div class="col-md-12 sub-mimin-mobile-menu-list animated fadeInLeft">
+                <ul class="nav nav-list">
+                    <li class="ripple">
+                      <a href="index.html">
+                        <span class="fa fa-home"></span>Ana Sayfa
+                      </a>
+                    </li>
+                    <li class="active ripple">
+                      <a href="pages/members.html" class="tree-toggle nav-header">
+                        <span class="fa fa-group"></span>Üyeler
+                      </a>
+                    </li>
+                    <li class="active ripple">
+                      <a href="pages/events.html" class="tree-toggle nav-header">
+                        <span class="fa fa-calendar"></span>Etkinlikler
+                      </a>
+                    </li>
+                    <li class="active ripple">
+                      <a href="pages/researches.html" class="tree-toggle nav-header">
+                        <span class="fa fa-pencil-square"></span>İçerik
+                        <span class="fa-angle-right fa right-arrow text-right"></span>
+                      </a>
+                      <ul class="nav nav-list tree">
+                        <li><a href="#konu" id="deneme">Konu</a></li>
+                        <li><a href="#trtkyc">Trec Robust Kapsamında Yapılan Çalışmalar</a></li>
+                        <li><a href="#kapsam">Kapsam</a></li>
+                        <li><a href="#sbeuyc">Seçkili Bilgi Erişim Üzerine Yapılmış Çalışmalar</a></li>
+                      </ul>
+                    </li>
+                    <li class="active ripple">
+                      <a href="pages/publications.html" class="tree-toggle nav-header">
+                       <span class="fa fa-book"></span>Yayınlar
+                      </a>
+                    </li>
+                    <li class="active ripple">
+                      <a ref="pages/resources.html" class="tree-toggle nav-header">
+                        <span class="fa fa-folder-open"></span>Kaynaklar
+                      </a>
+                    </li>
+                    <li class="active ripple">
+                      <a href="pages/links.html">
+                         <span class="fa fa-link"></span>İlgili Linkler
+                      </a>
+                    </li>
+                    <li class="active ripple">
+                      <a href="pages/jobs.html" class="tree-toggle nav-header">
+                        <span class="fa fa-briefcase"></span>Bursiyer/İş
+                      </a>
+                    </li>
+                    <li class="active ripple">
+                      <a href="pages/contact.html" class="tree-toggle nav-header">
+                        <span class="fa fa-envelope"></span>İletişim
+                      </a>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+      </div>
+      <button id="mimin-mobile-menu-opener" class="animated rubberBand btn btn-circle btn-danger">
+      <span class="fa fa-bars"></span>
+      </button>
+
+
+<!-- end: Content -->
+<!-- start: Javascript -->
+
+<script src="asset/js/jquery.min.js"></script>
+<script src="asset/js/jquery.ui.min.js"></script>
+<script src="asset/js/bootstrap.min.js"></script>
+<script src="asset/js/script.js"></script>
+
+
+<!-- plugins -->
+<script src="asset/js/plugins/moment.min.js"></script>
+<script src="asset/js/plugins/jquery.nicescroll.js"></script>
+
+
+<!-- custom -->
+<script src="asset/js/main.js"></script>
+<!-- end: Javascript -->
+</body>
+</html>

@@ -1,0 +1,241 @@
+<div class="tr" style="display:none;">
+	<div class="panel box-shadow-none content-header">
+			<div class="panel-body" id="paneltop">
+				<div class="col-md-12" id="titlecolor">
+						<h3 class="animated fadeInLeft">Içerik</h3>
+				</div>
+			</div>
+	</div>
+	<div class="col-md-12" >
+    <div class="panel">
+
+      <div class="panel-body">
+      <div class="col-md-12  article-v1-body">
+        <p>Bu bölüm “Konu” ve “Kapsam” olarak iki kısma ayrılmıştır. Literatür özeti konu ve kapsam anlatımı içinde yeri geldikçe verilmiş; anlatım içinde akışı bozmamak adına değinilememiş olan çalışmalar bölüm sonunda topluca sunulmuştur. İlk kısımda önce geleneksel bilgi erişim sistem tasarımı verilmiş ve bu tasarım üzerinden bilgi erişim sahasının en temel meselelerinden biri olan başarım gürbüzlüğü (robustness in retrieval performance) problemi açıklanmıştır. İlk kısmın yani “Konu” kısmının sonunda meselenin ilk defa açıkça tanımlandığı ve çözümüne yönelik ilk deneysel alt yapının sağlandığı TREC (Text REtrieval Conference) Robust track kapsamında yürütülen çalışmalar tanıtılmıştır. İkinci kısımda, yani “Kapsam” kısmında, başarım gürbüzlüğü problemine çözüm olarak önerilen seçkili bilgi erişim (selective information retrieval) yaklaşımının sistem tasarımı verilmiştir (Şekil 3.3). İkinci kısmın sonunda seçkili bilgi erişim konusunda daha önce yapılmış çalışmaların tamamı bir taksonomi çizgesi (Şekil 3.4) ile özetlenmiş; bu çalışmalarda kullanılan yöntemler ve uygulama alanları listelenmiş (Tablo 3.3); literatürde bu proje ile doldurulacak boşluk belirtilmiş; ardından kavramsal sistem tasarımımız takip edilerek çalışmalar tek tek özetlenmiştir.
+    Projede ele aldığımız temel mesele başarım gürbüzlüğüdür. Söz konusu mesele, bilgi erişim sahasında yapılan ilk deneysel çalışmaların (Harman, 1994) hemen ardından varlığını hissettirmiş ancak Web üzerinde yapılan ilk çalışmalara kadar (TREC, 1999) meselenin temel bir mesele olduğu ortaya çıkmamıştır. İlerleyen kısımlarda bahsedildiği gibi, 2003 yılında gerçekleştirilen “güvenilir bilgi erişim” çalıştayında (reliable information access workshop), Harman ve Buckley (2004) konuyu enine boyuna ele almış ve 2003 yılında TREC çalışmalarına dâhil ederek (TREC Robust track) bu yöndeki araştırmaları teşvik etmiştir: TREC Robust track, 2003, 2004 ve 2005 yıllarında düzenlenmiştir. Bu ilk dalga araştırmalarda daha çok bilgi erişimin ön-işlem aşamasında kullanılan teknolojiler üzerine yoğunlaşılmış (sorgu genişletme vs.); başarım gürbüzlüğü meselenin çözümünde kısmi ilerlemeler kaydedilmiş ancak tam olarak halledilememiştir. İlerleyen zaman içinde, bilgi erişim teknolojileri sayı ve tür olarak zenginleşmiştir. İlk çalışmalar sorgu genişletme gibi teknolojilerin erişim süreci ile bütünleştirilmesini esas alan yalın çözümleri içerirken, erişim teknolojilerindeki zenginleşme sonraki çalışmalarda seçkili bilgi erişim fikrini tetiklemiş ve başarım gürbüzlüğü meselesinin çözümü için önerilen yöntemler 2009 yılına kadar sadece seçkili bilgi erişim üzerine olmuştur. Collins-Thompson (2009), sorgu genişletme kapsamında başarım gürbüzlüğünü sağlamak için sorgu genişletme işi için bir “Risk” modeli önermiştir. Ardından Vang vd. (2012) bu risk modelini bir art-işlem teknolojisi olan learning-to-rank ile bütünleştirerek başarım gürbüzlüğü meselesine seçkili bilgi erişim dışında bir bakış açısı kazandırmıştır. Bu çalışmadan sonra (2012’den sonra) başarım gürbüzlüğü meselesinin çözümü için yapılan çalışmalar iki koldan devam etmiştir: 1) Seçkili bilgi erişim kapsamında yürütülen çalışmalar ve 2) Learning-to-Rank kapsamında yürütülen çalışmalar. Bu projede önerilen çalışma temel olarak seçkili bilgi erişim kapsamına girmektedir. Ancak, proje kapsamında aralarından seçim yapılacak aday teknolojiler kümesi learning-to-rank tekniklerini de içermektedir (bkz. Kapsam). </p>
+        <p id="konu" style="font-size: 15px;"><b>KONU</b></p>
+        <p>Genel anlamda, bir bilgi erişim sisteminin görevi, doğal dilde yazılmış bir sorgu (cümlesi) ile alakalı olabilecek belgelerin hedef bir belge derleminden aranıp bulunması ve sorgu ile alaka derecelerine göre sıralanmasıdır. Sorgu q, belge derlemi D, ve erişim yöntemi de π simgesi ile temsil edilsin. Bilgi erişim işi aşağıdaki gibi ifade edilebilir:<br>
+          Dq  π (q, D),<br>
+        burada erişim yöntemi (π), sorgu (q) ve belge derlemini (D‘yi) girdi olarak alır ve cevap olarak D’nin bir alt kümesini (Dq) döndürür. Söz konusu alt küme (Dq) içindeki belgeler, sorgu ile “alakala” (relevance) derecelerine göre sıralanır ve listelenir. Bu sıralı belge listesine kısaca sonuç listesi (result list) denir.  Geleneksel bir bilgi erişim sisteminin temsili işleyişi Şekil 3.1’de betimlenmiştir.</p>
+        <img src="asset/img/bilgierişimsistemi.jpg" style="float: center;" class="img-responsive" id="responsiveimg">
+        <p><b>Şekil 3.1</b>: Geleneksel Bir Bilgi Erişim Sisteminin Temsili İşleyişi.</p>
+        <p>Bilgi erişim sistemlerinde “Sayısal Temsil Yordamı” belge derlemi içindeki belgelerin ve kullanıcı sorgularının sayısal temsilinden sorumludur. Belge ve sorguların en yalın sayısal temsili, belgeleri ve sorguları kelime kümelerine çevirmektir. Bu temsil şeklinde kelimelere “indeks terimler” adı verilir. Her indeks terim için o terimin gözlendiği belge/sorguda kaç defa geçtiği de sayısal temsilin bir parçasıdır. Bu gözlenme sayısı “indeks terim frekansı” olarak adlandırılır. Sayısal temsilin ardından eşleştirme adımında belgeler ile sorgular arasındaki alaka derecesi indeks terim ağırlıklandırma (index term weighting) yöntemleri ile hesaplanır. Literatürde çok sayıda indeks terim ağırlıklandırma yöntemi/modeli mevcuttur. Bunlardan ön plana çıkanları şunlardır: TFxIDF (Salton ve Buckley, 1988), BM25 (Robertson vd., 1994), DFR framework (Amati ve Rijsbergen, 2002), DFI framework (Dinçer, 2012; Kocabaş vd., 2013) ve Language Model (Ponte ve Croft, 1998).</p>
+        <p>Geleneksel bilgi erişimde bir sistem önceden belirlenmiş sabit bir sayısal temsil yordamı ve indeks terim ağırlıklandırma yönteminden oluşur. Örneğin, sayısal temsil için iki boşluk arasındaki her simge birliği (harf ve/veya sayı dizileri) indeks terim olarak kabul edilebilir ve eşleştirme için de TFxIDF terim ağırlıklandırma modeli kullanabilir. Böyle bir sistem kurgusu yapıldıktan sonra verilen her sorgu bu iki ardışık süreçten aynı şekilde geçirilir ve sorgu için sonuç listesi elde edilir. Bir başka söyleyişle, her sorgu için aynı <b>erişim stratejisi</b> kullanılır.</p>
+        <p>Geleneksel bilgi erişim işinde temel meselelerden biri, muhtemelen en temeli, yukarıda örneklenen gibi her erişim stratejisinin başarımında sorgudan sorguya büyük dalgalanmalar olmasıdır: bir erişim stratejisi bazı sorgularda çok başarılı olabilmekte ancak aynı zamanda bazı sorgularda da çok başarısız olabilmektedir. Bilgi erişim sahasında bu mesele başarım gürbüzlüğü problemi olarak bilinir.</p>
+        <p>Başarım gürbüzlüğü problemini geleneksel bir bilgi erişim sisteminin işleyişi içinde seçkisiz bir yöntemle çözmeye çalışmak pratikte çok zordur. Örneğin bir sistemin herhangi bir sorguda başarısız olduğunu ve bunun sebebinin kısa belgelerin sonuç listesinde sistem tarafından ön sıralara alınması olduğunu varsayalım (uzun belgelerin cezalandırılması ve sonuç listesinde arka sıralara itilmesinin <u>ortalamada</u> sistem başarımını arttırdığı bilinmektedir). Bu durumda söz konusu sorguda sistem başarımını yükseltmek için uzun olan belgeleri sonuç listesinde ön sıralara almak çözüm olacaktır. Ancak bu değişiklik geleneksel bir sistemde yapıldığında o sistem tüm sorgular için uzun belgeleri sonuç listesinde ön sıralara alır ve sonuçta sistemin diğer sorgulardaki başarımına zarar verir. Özetle, geleneksel bir sistemin başarım gürbüzlüğü başarısız olunan sorgular üzerinden kademe kademe arttırılamaz; o sistemin işleyiş parametreleri seçkili şekilde sorgudan sorguya değiştirilerek arttırılabilir. </p>
+        <p id="bgp" style="font-size: 15px;"><b>Başarım Gürbüzlüğü Problemi</b></p>
+        <p>Zaman içinde yapılan deneysel çalışmalar her sorgu için sabit bir bilgi erişim sistemi/stratejisi kullanmanın her zaman en iyi yaklaşım olmadığını göstermiştir. Bu durumun deneysel kanıtları herhangi bir TREC çalışmasına katılım yapmış sistemler üzerinden gösterilebilir. Tablo 3.1’de TREC 2012 Web Track çalışmasına katılmış sistemlerden 50 sorgu üzerinden ortalama başarımı en yüksek olan ilk 10 sistem listelenmiştir. Bu tabloda her sorgudaki sistem başarımı ERR@20 (Chapelle vd., 2009) ölçütü ile ölçülmüştür. ERR@20 ölçütü sistem başarımını 0 ila 1 arasında bir puan ile ölçmektedir: 0 çok kötü, 1 ise mükemmel anlamına gelir. </p>
+        <img src="asset/img/graph.jpg" style="float: center;" height="200" class="img-responsive" id="table">
+        <p><b>Tablo 3.1</b>: TREC 2012 yarışmasında ortalama ERR@20 üzerinden en başarılı 10 sistem.</p>
+        <p>lk 10 sistem içinde herhangi bir sistemin başarımının gürbüz olup olmadığını o sistemin tek tek sorgularda elde ettiği ERR@20 puanlarını bir çizge halinde betimleyerek gözle analiz edilebiliriz. Şekil 3.2’de ortalamada en başarılı ilk 5 sistem için 50 sorgunun her birinde elde ettiği ERR@20 puanı çizge olarak gösterilmiştir. Görüldüğü gibi ortalamada en iyi sistemin dahi başarımı sorgudan sorguya çok kötü ile mükemmel arasında değişmektedir. En iyi erişim stratejisini belirlemek için ortalama başarımın gerek şart olduğu bir gerçektir ancak yeter şart olmadığı da (deneysel) bir gerçektir.</p>
+        <img src="asset/img/linegraph.jpg" style="float: center;" class="img-responsive" id="responsiveimg">
+        <p><b>Şekil 3.2</b>: TREC 2012’de en başarılı ilk 5 sistem için sorgu başına elde edilen ERR@20 puanı.</p>
+        <p>Başarım gürbüzlüğü problemi ilk kez 2003 yılında güvenilir bilgi erişim çalıştayında (Harman ve Buckley, 2004) ele alınmıştır. Bu çalıştayda ana tema son kullanıcı bakış açısından bilgi erişim teknolojilerinin başarım algısıdır. <u>Kullanıcılar bir sistemin ortalama başarımının ne olduğu ile ilgilenmezler. Kullanıcılar açısından önemli olan sisteme yönlendirdikleri bireysel sorguların hangi başarı düzeyinde cevaplandırıldığıdır.</u> Kullanıcılar genelde iyi deneyimlerinden ziyade kötü deneyimlerini hatırlama eğilimindedirler. Herhangi bir kişi belirli bir sistemden genelde memnun olsa da arada sırada gelebilecek birkaç kötü sonuç kullanıcıyı söz konusu sistemi kullanmaktan vazgeçirip başka bir sisteme geçişine sebep olabilir. Dolayısı ile son kullanıcı bakış açısından, sistemlerin sorgudan sorguya başarımının radikal şekilde değişmesi istenmeyen bir durumdur, yani kullanıcılar sistem başarımının gürbüz olmasını beklerler ve diğer durumda da hayal kırıklığına uğrayıp başka sisteme geçme eğilimi gösterirler. </p>
+        <p>Günümüz bilgi erişim teknolojisi altında hiçbir sistemin tatminkâr/istenilen düzeyde başarım gürbüzlüğüne sahip olmadığı deneysel bir gerçektir. Ancak belirli bir sistemin başarısız olduğu bir sorguda diğer mevcut sistemlerden bir veya bir kaçının genelde tatminkâr başarımlar elde edebildiği de bir başka (deneysel) gerçektir. TREC 2012 örneği üzerinden bu duruma da deneysel kanıt sunmak mümkündür. Tablo 3.2’de 50 adet TREC 2012 sorgusunun her birinde elde edilen en yüksek başarım puanı ve hangi sistemin bu puanı elde ettiği listelenmiştir. Tabloda görüldüğü gibi hemen hemen tüm sorgular için katılımcı sistemlerden biri tatminkâr bir başarım göstermektedir. Bu tablo aynı zamanda hiçbir sistemin yeterince başarım gürbüzlüğüne sahip olmadığını da göstermektedir: tabloda, ortalama başarım üzerinden ilk 10’a girmiş sistemlerden hiçbirinin sayıca baskın olmadığı ve ilk 10 sistem arasına girememiş sistemlerin bazı sorgularda en yüksek başarımı elde ettiği görülmektedir.</p>
+        <img src="asset/img/webtrackgraph.jpg" style="float: center;" height="340" class="img-responsive" id="responsiveimg">
+        <p><b>Tablo 3.2</b>: TREC 2012 Web Track sorgularında elde edilmiş en yüksek başarım puanları ve karşılık gelen sistemler.</p>
+        <p>Özetleyecek olursak, yukarıda sunulan deneysel kanıtlar üzerinden iki tespit yapılabilir: 1) bilgi erişim sistemlerinin/stratejilerinin başarımı sorgular arası büyük bir varyansa sahiptir (high variation in performance across queries); 2) söz konusu yüksek varyans verilen herhangi bir sorguda sistem başarımları arasında da vardır (high variation in performance across systems). Bu tespitler de sonuç olarak seçkili bilgi erişim ile başarım gürbüzlüğü meselesine çözüm getirilebileceğini önermektedir.</p>
+        <p id="trtkyc" style="font-size: 15px;"><b><u>TREC ROBUST TREC KAPSAMINDA YAPILAN ÇALIŞMALAR</u></b></p>
+        <p>2003-2005 yılları arasında düzenlenen TREC Robust Track, düşük başarım gözlenen sorgulara odaklanarak sistemlerin sorgudan sorguya büyük başarım farklılığı göstermesi problemine çözüm getirmeyi amaçlamıştır. Bu çalışmalarda geçmiş zamanların en “zor” (Hard Query) 50 sorgusu kullanılmıştır. Burada “zor sorgu”, sistemlerin büyük çoğunluğunun belirli bir eşik değerin altında başarım gösterdiği fakat en az bir sistemin tatminkâr bir başarı sergilediği sorgudur. </p>
+        <p>TREC Robust Track çalışmalarında kullanılan sorgular üç kısımdan oluşmuştur: 1) Başlık (Title) kısmı: bu kısımda aranan bilgi ihtiyacı en fazla bir cümle ile ifade edilmektedir, 2) Açıklama (Description) kısmı: başlık kısmında öz şekilde ifade edilmiş bilgi ihtiyacının etraflı tanımı, ve 3) Hikaye (Narrative) kısmı: bilgi ihtiyacını karşılayacak belgeler içinde hangi konuların alakalı olduğu ve hangi konuların alakalı olmayacağının açıklaması (örneğin, “ada” sorgusu için hikaye kısmında dört tarafı denizlerle çevrili kara parçası alakalı fakat kişi ismi olarak “ada” alakasız gibi.).</p>
+        <p>TREC çalışmalarında sistemlerin başarım gürbüzlüğünü sağlamak adına çeşitli yöntemler önerilmiştir. Bu yöntemler kendi içinde üç gruba ayrılabilir. 1) sorgu performansı tahminleme esasında seçkili sorgu işleme stratejisi (selective query processing strategy based on query performance prediction) (Plachouras, vd., 2005; Yom-Tov vd., 2005), 2) sonuç listesinin yeniden sıralanması (post-retrieval reordering) (Piatko vd., 2005; Xu vd., 2005) ve 3) sorgu esasında terim ağırlıklandırma yöntemi seçimi (query based index term weighting model selection) (He ve Ounis, 2003).</p>
+        <p>Bu üç grupta yer alan bireysel çalışmalar şöyledir. Plachouras vd. (2005) iki tane geri getirim öncesi “sorgu başarım tahmincisini” (query performance predictor - QPP) kullanarak, verilen sorguya en uygun terim ağırlıklandırma modelini tavsiye eden bir yöntem geliştirmiştir. Yom-Tov vd. (2005) “sorgu zorluğu tahmini” (query difficulty estimation - QDE) metotlarını, erişim başarımını artırmak için kullanmışlardır. Bu çalışmada, sorgu zorluğu tahmincileri, (i) indeks terim ağırlıklarının seçilmesi ii) sorgu için hangi kısmın (başlık, açıklama, hikaye) kullanılması gerektiğinin seçimi ve (iii) “seçkili sorgu genişletme” (selective query expansion) için kullanılmıştır. Piatko vd. (2005) sorgu kelimelerinin birbirine yakın geçtiği belgeleri üst sıralara taşıyacak bir yeniden sıralama yöntemi denemişlerdir. Xu vd. (2005), iki aşamalı geri getirim yöntemini kullanmışlardır. İlk aşamada sorguların başlık kısımları kullanılmıştır. İkinci aşamada ise, ilk aşamada elde edilen belge kümesini ve sorgunun diğer kısımlarını da (açıklama ve hikâye) hesaba katan ikinci bir geri getirim yapılmıştır. Buna ek olarak, ellerindeki 10 farklı sistemin sonuçlarını birleştiren yöntemler üzerinde de çalışmışlardır.</p>
+        <p>Ne yazık ki, TREC Robust track kapsamında önerilen yöntemlerden hiçbiri, geleneksel bilgi erişime kıyasla, sistem başarımında tutarlı bir artış; dolayısı ile gürbüzlük sağlayamamıştır. Bu çalışmalar sonucunda ulaşılan nihai çıkarım Web gibi zengin harici bir kaynak kullanarak sorgu genişletme yaklaşımının en iyi sonuçları verdiğidir.</p>
+        <p>Başarım gürbüzlüğü meselesine çözüm arayışı 2013 yılında TREC Web track kapsamında bir alt görev olarak yeniden gündeme gelmiştir. Bu alt görevde başarım gürbüzlüğü meselesi risk-duyarlılığı (risk-sensitivity) çerçevesinde ele alınmıştır. Bu bağlamda ilk çalışma Vang vd. (2012) tarafından yayınlanmış; başarım gürbüzlüğü learning-to-rank kapsamında bir optimizasyon problemine çevrilmiştir. Learning-to-rank esasındaki bu çalışmanın genişletilmiş ve geliştirilmiş hali Dinçer vd. (2014a) tarafından yapılmış; TREC Web track risk-duyarlılık alt görevi için deneysel tasarım da yine Dinçer vd. (2014b) tarafından geliştirilmiş ve ayrı bir çalışma olarak yayınlanmıştır.</p>
+        <p>İzleyen kısımda (Kapsam) projeye konu seçkili bilgi erişim sistem tasarımı ve seçkili bilgi erişim üzerine daha önce yapılmış çalışmalar tanıtılmaktadır.</p>
+
+        <p id="kapsam" style="font-size: 15px;"><b>KAPSAM</b></p>
+        <p>Önceki kısımda deneysel kanıtları ile birlikte bahsettiğimiz gibi, günümüz bilgi erişim teknolojisi altında hiçbir sistemin tatminkâr/istenilen düzeyde başarım gürbüzlüğüne sahip olmadığı bir gerçektir ancak belirli bir sistemin başarısız olduğu bir sorguda genelde mevcut diğer sistemlerden bir veya bir kaçının tatminkâr başarımlar elde edebildiği de bir başka gerçektir. Dolayısı ile çözüm esasen gözümüzün önündedir: seçkili bilgi erişim. TREC 2012 çalışmasında kullanılan 50 Web sorgusunun her biri için en başarılı sistem ve sisteme ait ERR@20 puanı Tablo 3.2’de verilmişti. Tabloda görüldüğü gibi, her sorgu için en yüksek başarımı veren sistemi mükemmel şekilde tespit eden bir yöntem olsa, bu yöntemi kullanan bir seçkili bilgi erişim sisteminin ortalama başarımı ERR@20 cinsinden 0.6234 olacaktır. Bu durum seçkili bilgi erişimin ne düzeyde bir potansiyeli olduğunu açık şekilde göstermektedir: ortalamada en başarılı tekil sistemin yaklaşık iki katı (0.3405, Tablo 3.1).</p>
+        <p>Bu nedenden olsa gerek, Harman ve Buckley (2009) şöyle demektedir: “… yeni bilgi erişim teknolojileri geliştirmeye yönelik araştırmalardan ziyade, mevcut erişim teknolojilerinden hangisinin hangi sorgu için en yüksek başarımı sağlayacağını tespit/tahmin etmeye yönelik araştırmalara öncelik vermek gerekir”. Bu yönde yapılacak bir çalışmada temel araştırma konusu, hangi sorgu için hangi bilgi erişim stratejisinin tatminkâr başarımı sağlayacağını (otomatik olarak) önceden belirlemek/tahmin etmektir. </p>
+        <p>Geleneksel bilgi erişimin aksine, seçkili bilgi erişimde tüm sorgular için önceden belirlenmiş sabit bir erişim stratejisi kullanmaz. Onun yerine her sorgu için dinamik olarak bir erişim stratejisi belirlenir. Burada erişim strateji ile belirli bir sistem yapılandırmasını oluşturan erişim teknolojileri kümesi kastedilmektedir. Dolayısı ile seçkili bir bilgi erişim sistemi verilen sorgulara en uygun erişim stratejisini seçer. Proje kapsamında geliştirilmesi önerilen seçkili bilgi erişim sisteminin kavramsal tasarımı Şekil 3.3’de verilmiştir.</p>
+        <img src="asset/img/islemasamalari.jpg" style="float: center;" height="300" class="img-responsive" id="responsiveimg">
+        <p><b>Şekil 3.3</b>: Seçkili Bilgi Erişim Sistem Tasarımı. Ön-işlem ve art-işlem aşamaları bilgi erişim sürecinde seçimlik adımlar oluduğu için aday teknolojiler 0’dan n’e numaralanmıştır: 0 durumu alt işlem adımının kullanılmadığını ifade eder.</p>
+        <p>Şekil 3.3’de betimlenen seçkili bilgi erişim sistem tasarımında üç temel alt bileşen/işlem mevcuttur: 1) Ön-İşlem (Pre-Processing), 2) İşlem/Eşleştirme (Process/Matching) ve 3) Art-İşlem (Post-Processing). Ön işlem teknolojileri içinde, simgeleştirme (tokenization), durma-kelimeleri ayıklama (stop-word removal), gövdeleme (stemming), sorgu genişletme/daraltma (query expansion/reduction) vs. sayılabilir. İşlem veya eşleştirme teknolojileri indeks terim ağırlıklandırma modelleridir (TFxIDF, BM25 vs.). Art-işlem teknolojileri ise eşleştirme aşamasının sonunda elde edilen belge kümesi üzerinde yeniden sıralama yapmayı sağlayan teknolojilerdir (Learning-to-Rank, Diversification, vs.). Bu proje kapsamında her işlem aşaması için ele alınacak aday teknolojiler aşağıdaki gibidir.</p>
+				<ul class ="list">
+					<li><b id="öia"> 1. Ön İşlem Aşaması</b>
+						<ul class ="list">
+							<li>a. Sayısal Temsil Yordamları</li>
+							<ul class ="list">
+								<li>i. Gövdeleme (Stemming) [Porter (Porter, 1980), KStem (Krovetz, 1993), vs.]
+				        	<ul class ="list"><li>1. On the fly / index time.</li></ul>
+								</li>
+				        <li>ii. Yapısal Belge İndeksi (Web sayfaları için URL, Meta Bilgi, Başlık, Metin Gövdesi, Çıpa Metin vs.)
+							</ul>
+							<li>b. Sorgu Genişletme (Query Expansion)
+								<ul class ="list">
+					        <li>i. Dahili kaynak tabanlı (Tom-Tov vd., 2005)</li>
+					        <li>ii. Harici Kaynak tabanlı (Peng vd., 2009)</li>
+								</ul>
+							</li>
+						</ul>
+		      </li>
+	        <li><b id="iea">2. İşlem/Eşleştirme Aşaması</b>
+		        <ul class ="list">
+		          <li>a. Parametrik Terim Ağırlıklandırma Yöntemleri [BM25 (Robertson vd., 1994), DPH (Amati vd., 2007), PL2 (Amati ve Rijsbergen, 2002) vs.]</li>
+		          <li>b. Parametresiz (Parameter Free) Terim Ağırlıklandırma Yöntemleri [DFRee (Amati ve Rijsbergen, 2002),  TFxIDF (Salton ve Buckley, 1988) vs.]</li>
+		          <li>c. Parametrik Olmayan (Nonparametric) Terim Ağırlıklandırma Yöntemleri [DFIC & DFIZ (Kocabaş vd., 2013; Dinçer, 2012)]</li>
+		          <li>d. Dil modeli Esasında Terim Ağırlıklandırma Yöntemleri [DLM (Ponte ve Croft, 1998) vs.]</li>
+		        </ul>
+					</li>
+				<li><b id="aia" >3. Art-İşlem Aşaması</b>
+	        <ul class ="list">
+	          <li>a. Learning-To-Rank Teknikleri</li>
+	            <ul class ="list">
+	              <li>i. Otomatik Özellik Seçimi (AFS) veya Doğrusal LTR (Metzler, 2007). Normal ve Risk-Duyarlı optimizasyon türleri ve türevleri.</li>
+	              <li>ii. LambdaMART (Ganjisaffar vd., 2011). Normal ve Risk-Duyarlı optimizasyon türleri (Wang vd., 2012) ve türevleri (Dinçer vd., 2014).</li>
+	              <li>iii. RankNET (Burges vd., 2005)</li>
+	              <li>iv. Ranking SVM (Joachims 2002)</li>
+	              <li>v. ListMLE (Xia vd., 2008)</li>
+	              <li>vi. RankBoost (Freund vd., 2003)</li>
+	              <li>vii. AdaRank (Xu ve Li, 2007)</li>
+	            </ul>
+	          <li>b. Kümeleme esasında Yeniden Sıralama Teknikleri
+	            <ul class ="list">
+								<li>i. ClustMRF (Clustering Based on Markov Random Field Method) (Raiber ve Kurlan, 2013)</li>
+							</ul>
+						</li>
+	          <li>c. Sorgu Çeşitlendirme Teknikleri (Query Diversification)
+	          	<ul class ="list">
+								<li>i. xQuad (Santos vd., 2010)</li>
+							</ul>
+						</li>
+	        </ul>
+				</li>
+			</ul>
+        <p><u>Bu proje kapsamında geliştirilmesi önerilen seçkili bilgi erişim sistemi <b>sistem füzyonunu</b> (system fusion) esas alır</u>. Proje kapsamında sistem füzyonu, mevcut bilgi erişim teknolojisinin mümkün kıldığı tüm alt sistem bileşenleri kullanılarak verilen her sorgu için sorguya özel bir sistemin dinamik şekilde yapılandırılması işi olarak kabul edilir. Tablo 3.2’de TREC 2012 Web Track sorgularının her biri için en başarılı olan sistemlerin bir listesi verilmiş ve seçkili bilgi erişimin mükemmel olarak gerçekleştirilebildiği ideal durum için potansiyel en yüksek başarım örneklenmişti. Esasen bu örnek, projede önerildiği şekilde bir sistem füzyonu değildir. Örnekte, gerçek sistemler yani ön-işlem, işlem ve art-işlem aşamalarında kullanılan teknolojileri önceden belirlenmiş sabit sistemler arasından bir seçim yapılmaktadır. Oysa sistem füzyonu ile bu projede kastedilen, böylesi sistemleri oluşturan tüm alt bileşen teknolojilerini kullanarak her sorguya özel bir yapılandırmanın dinamik şekilde oluşturulmasıdır. Bir sorgu karşısında tek tek ön-işlem, işlem ve art-işlem aşamaları için en uygun teknolojiyi seçip bir sistem yapılandırmakla (projede önerilen), olası tüm sistem yapılandırmalarını önceden oluşturup onlar arasından bir seçim yapmak (Tablo 3 örneği) arasında temel bir fark vardır. Örnekteki yaklaşımın projede önerilene nazaran ölçeklenebilirliği düşüktür. Ön-işlem, işlem ve art-işlem aşamalarının her biri için ele alınacak aday teknoloji sayısı artarken, yapılandırılabilecek farklı sistem sayısı da üstel şekilde artar: her işlem aşaması n adet adaya sahipse olası sistem yapılandırması sayısı n3’dür. Kuramsal olarak istatistiksel sınıflandırma (classification) yöntemleri ile iki veya daha fazla sınıf arasından seçim yapmak mümkündür. Ancak, en azından bilgi erişim sahasındaki talim derlemlerinin (training corpora) yetersizliği göz önüne alındığında, n3 adet sınıf sayısı, n değeri orta düzeyde olsa bile, pratikte kolayca halledilebilir bir sınıf sayısı değildir. Plachouras (2006) seçkili Web bilgi erişimi üzerine yaptığı çalışmada pratikte iki seçenek arasından seçim yapıldığı durumda en başarılı tekil sistemden daha yüksek bir başarım elde edilebildiğini; ikiden daha fazla seçenek olduğunda başarımın düştüğünü rapor etmiştir. </p>
+        <p><u>Proje kapsamında geliştirilmesi önerilen seçkili bilgi erişim sistemi esasen bir meta sistem olarak da görülebilir</u>. Ancak gerçek anlamı ile bir meta sistem değildir. Bu bağlamda “Meta Search” (Dreilinger ve Howe, 1997) ve “Federated Search” (Demeester vd., 2013) uygulama alanındaki çalışmalar ile projede önerilen çalışma arasında bir benzerlik vardır fakat aynı değillerdir. Söz konusu iki alanda sistem yapılandırması yerine sonuç listeleri üzerine yoğunlaşılmıştır. Bu alanlarda sistemler bir kara-kutu (black-box) olarak ele alınır ve sistem bileşenlerine erişim olmadığı varsayılır. Bir başka deyişle “Meta Search” ve “Federated Search” alanlarındaki çalışmalar, sistem füzyonu yerine veri füzyonu (data fusion) yaparlar.  “Meta Search”de belirli bir sorgu farklı sistemlere gönderilir (çoğunlukla bu sistemler aynı belge derlemi üzerinde çalışırlar, örneğin İnternet) ve her sistemin ürettiği sonuç listesi tek bir yerde toplanır. Ardından bu sonuç listeleri harmanlanarak nihai, tek bir sonuç listesi kullanıcıya sunulur. Diğer taraftan “Federated Search”de tek bir sistem vardır ancak belge derlemi, mahremiyet, ölçeklenebilme veya gizlilik nedenleri ile bütün halde bulunmaz ve dağıtıktır. Her derlem parçası üzerinde (genelde) aynı sistem koşturularak bir sonuç listesi üretilir ve ardından bu sonuç listeleri harmanlanarak nihai, tek bir sonuç listesi kullanıcıya sunulur. Doğrudan seçkili bilgi erişim işi üzerine yapılan çalışmalar ilerleyen kısımlarda aktarılmıştır.</p>
+
+        <p id="sbeuyc" style="font-size: 15px;"><b><u>SEÇKİLİ BİLGİ ERİŞİM ÜZERİNE YAPILMIŞ ÇALIŞMALAR</u></b></p>
+        <p>Şekil 3.4’de gösterildiği gibi literatürde seçkili bilgi erişim üzerine yapılmış bir düzine kadar çalışma vardır. Önceki çalışmalar Şekil 3.3’de verilen sistem tasarımındaki üç işlem aşaması üzerinden gruplanabilir: </p>
+        <ul class ="list">
+          <li>1. Ön-işlem teknolojileri arasında seçim yapanlar,</li>
+			    <li>2. İşlem/Eşleştirme teknolojileri arasında seçim yapanlar,</li>
+			    <li>3. Art-işlem teknolojileri arasında seçim yapanlar ve</li>
+			    <li>4. Diğer (sistemleri bir bütün olarak ele alıp aralarından seçim yapanlar)</li>
+				</ul>
+    <p>Tablo 3.3’de önceki çalışmalarda seçim yapmak için kullanılan teknikler listelenmiştir. Bu teknikler işin doğası gereği sınıflandırma ve karar verme tekniklerinden ibarettir. Sınıflandırmada ağırlıklı olarak kümeleme teknikleri (k-NN, CURE, vs.) ve karar vermede de Bayes karar kuramı (yalın veya ağ şeklinde) kullanılmıştır. Esasen iki seçenek arasında karar vermek ile iki sınıflı bir sınıflandırma yapmak arasında bir fark yoktur: dolayısı ile seçenek sayısı iki olduğunda, örneğin gövdeleme yapma veya yapmama arasında bir seçim yapmak için, hem sınıflandırma teknikleri hem de karar verme teknikleri kullanılabilir. </p>
+    <p>Önceki çalışmaların tamamında sınıflandırma teknikleri sorguları sınıflandırmak için kullanılmış ve her sınıf için en uygun teknoloji belirlenmiştir. Ele alınan teknolojiler arasından seçim yapma işi için önce verilen yeni sorgunun hangi sınıfa girdiği belirlenmiş/tahmin edilmiş ve o sınıf için önceden belirlenen teknoloji söz konusu sorguda kullanılmıştır. Bu yaklaşım her ne kadar akla yatkın olsa da, bu bölümün ilerleyen kısımlarında özetlendiği gibi, seçim doğruluğunu arttırmada beklenen başarıyı sağlayamamıştır. Beklenen başarının elde edilememesinin nedenlerinden biri, bizce temel nedeni, sorguları kendi içinde sınıflandırmak için kullanılacak bir öznitelik kümesi ile sorguları aday teknolojiler üzerinden sınıflandırmada kullanılacak öznitelik kümesinin birbirinden farklı olması gerekliliğidir. Diğer bir deyişle, literatürdeki mevcut çalışmalar seçim yapılacak aday teknolojiler ile sorgular arasında dolaylı bir ilişki kurmakta bu da yapılan sınıflandırma doğruluğunu zayıflatmaktadır. <u>Bu projede aday teknolojiler ile sorgular arasında doğrudan ilişki kurulmasını sağlayacak yeni bir grup öznitelik geliştirilecektir</u>.</p>
+    <img src="asset/img/calismalargraph.jpg" style="float: center;" height="400" class="img-responsive" id="responsiveimg">
+    <p><b>Şekil 3.4</b>: Seçkili bilgi erişim literatürü. Şekilde dikdörtgen içinde gösterilen çalışmalarda kullanılan yöntem parantez içinde ve uygulama türü de köşeli parantez içinde belirtilmiştir. Üzerinde kilit simgesi bulunan çalışmalar ticari arama motorlarından elde edilen (umumi olmayan) veriyi kullanmaktadır.</p>
+    <table border="1" style="width:80%">
+      <tr>
+        <th colspan="2" width="50%">Önceki Çalışmalarda Kullanılan Teknikler</td>
+        <th colspan="2" width="50%">Önceki Çalışmalarda Seçime Tabi Teknoloji</td>
+      </tr>
+     <tr>
+       <td>AdaBoost</td>
+       <td>Adaptive Boosting M1 (Ensemble Learning)</td>
+       <td>CE</td>
+       <td>Collection Enrichement</td>
+     </tr>
+     <tr>
+       <td>AHC:</td>
+       <td>Agglomerative hierarchical clustering</td>
+       <td>Divers.</td>
+       <td>Diversification</td>
+     </tr>
+     <tr>
+       <td>Bayes</td>
+       <td>Bayesian decision mechanism</td>
+       <td>LTR</td>
+       <td>Learning-to-Rank</td>
+     </tr>
+     <tr>
+       <td>Bayes-DN</td>
+       <td>Bayesian Dependency Networks</td>
+       <td>Person.</td>
+       <td>Personalization</td>
+     </tr>
+     <tr>
+       <td>CURE</td>
+       <td>Clustering Using Representatives</td>
+       <td>SE</td>
+       <td>Search Engine (Google, Yahoo, vs.)</td>
+     </tr>
+     <tr>
+       <td>GBRT</td>
+       <td>Gradient Boosted Regression Trees</td>
+       <td>SysConf</td>
+       <td>System Configuration</td>
+     </tr>
+     <tr>
+       <td>HC</td>
+       <td>Hard Classification</td>
+       <td>TW</td>
+       <td>Term Weighting</td>
+     </tr>
+     <tr>
+       <td>JS-Diverg.</td>
+       <td>Jensen–Shannon divergence</td>
+       <td>TW+QIF</td>
+       <td>TW + Query Independent Features</td>
+     </tr>
+     <tr>
+       <td>k-NN</td>
+       <td>k-Nearest Neighbors</td>
+       <td>QE</td>
+       <td>Query Expansion</td>
+     </tr>
+     <tr>
+       <td>MaxMAP</td>
+       <td>Maximum-Margin Averaged Perceptron</td>
+       <td>QTP</td>
+       <td>Query Type Detection</td>
+     </tr>
+     <tr>
+       <td>SVM</td>
+       <td>Support Vector Machines</td>
+       <td>WebIR</td>
+       <td>Web Information Retrieval</td>
+     </tr>
+     <tr>
+       <td>QDLF</td>
+       <td>Query Dependent Loss Function</td>
+     </tr>
+     <tr>
+       <td>QPP</td>
+       <td>Query Performance Prediction</td>
+     </tr>
+    </table>
+    <p><b>Tablo 3.3</b>: Şekil 3.4 için kısaltmalar tablosu.</p>
+    <p>Literatürde karar verme işinde kullanılan (sorgu-bağımlı) öznitelikler tahminciler (predictors) olarak adlandırılmaktadır: sorgu zorluk tahmincileri (query difficulty predictors) ve zorgu başarım tahmincileri (query performance predictors). Sınıflandırmada sorgu temsili için kullanılan öznitelikler de sorgu öznitelikleri (query features) olarak adlandırılır. </p>
+    <p>Karar verme işinde kullanılan tahminciler için de sınıflandırmada kullanılan özniteliklerdeki durum söz konusudur. Tahminciler ya sorgu zorluğunu veya sorgu başarımını tahmin etmektedir. Yani yine önce sorgular kendi içinde sınıflandırılmakta, sorgular ile aday teknolojiler arasındaki ilişki dolaylı şekilde kurulmaktadır. Tahmincilerle ilgili bir başka husus daha vardır. Tahmincilerin bir sorgu için ürettiği değer her aday teknoloji veya daha doğrusu her strateji/sistem için sabit olduğundan, tahmincileri de sorguların aday teknolojiler üzerinden sınıflandırması işinde kullanılmak mümkün değildir. Genel anlamda bu tür bir sınıflandırma için kullanılacak öznitelikler her farklı sorgu ve aday teknoloji çifti için farklı değer üretmelidir. <u>Bu projede geliştirilecek olan yeni öznitelikler</u> her farklı sorgu ve aday teknoloji çifti için farklı değer üretecektir. </p>
+    <p>Esasen bahsettiğimiz husus sadece öncül tahminciler için geçerlidir: öncül tahminciler sonuç listesi üretilmeden önce tahminde bulunanlardır. Bir de ardıl tahminci, yani sonuç listesi üzerinden tahmin üreten, öznitelikler vardır. Bu tahminciler sonuç listeleri üzerinden tahmin yürüttükleri için her sorgu ve aday teknoloji için farklı değer üretirler. Ancak <u>bu projede ardıl tahminciler kapsam dışında tutulmuştur</u>. Bunun birinci sebebi ardıl tahmincilerin hesaplama açısından maliyetli olmasıdır; ikinci sebebi ise öncül tahmincilerden daha maliyetli olmalarına karşın erişim başarımını aynı oranda arttırmadıkları rapor edilmiştir (Carmel ve Yom-Tov, 2010). Projede hedefimiz endüstriyel ölçekte bir ürün çıkarmaktır ve bu konuda cevap verme süresi önemli bir koşuttur. Seçkili bilgi erişimin potansiyel başarımı aday teknoloji sayısı arttıkça artar, ancak diğer taraftan aday teknoloji sayısı arttıkça ardıl tahmincilerin hesaplama maliyeti de artar: proje hedefimize hizmet edecek öznitelikler öncül tahminciler gibi aday teknoloji sayısı artarken hesaplama maliyetleri sabit kalan tahmincilerdir. Projede ardıl tahminciler B planı ve deneysel başarım karşılaştırmalarında kullanılacaktır.</p>
+    <p>Bu bölümün geri kalan kısmında Şekil 3.4’de betimlenen çalışmalar özet halde verilmiştir.</p>
+    <p style="font-size: 15px;"><b>Ön-işlem teknolojileri arasında seçim yapanlar:</b></p>
+    <p>Ön işlem aşamasına odaklanmış çalışmaların başında otomatik sorgu genişletmesi (automatic query expansion) gelir. Otomatik sorgu genişletmesi verilen sorguya ilave terimler ekleyen bir yöntemdir. Ancak deneysel çalışmaların sonuçlarına göre bu teknik bazı sorgular için (genelde “kolay” sorgular için) sonuçları iyileştirmekte, bazı sorgular için (“zor” sorgular için) olduğundan daha da kötüleştirmektedir. Bu deneysel gözlemden yola çıkarak, Yom-Tov vd. (2005) ikili bir sınıflandırıcı olan “Support Vector Machines” (SVM) tekniği ile ne zaman sorgu genişletmenin başarıma katkı sağladığını tespit amacı ile bir çalışma yapmışlardır. Karar mekanizmasında öznitelik olarak sorgu zorluğu tahmincileri (query difficulty estimation) kullanılmıştır. Deneysel sonuçlar, kullanılan yöntemin doğrudan sorgu genişletmeye göre anlamlı bir başarım kazanımı sağlamadığını göstermiştir. Aynı araştırma çizgisinde Winaver vd. (2007) bir sorgunun genişletilmiş hallerini temsil eden modeller arasından en iyisini seçme üzerine bir çalışma yapmışlardır. Bu seçim Kullback–Leibler divergence esasında yapılmıştır. Deneysel sonuçlar, bu çalışmada önerilen yöntemin elle sorgu genişletme kadar iyi sonuçlar verebildiğini göstermiştir. Diğer taraftan Peng vd. (2009) verilen bir sorgu için seçkili derlem genişletmesi (selective collection enrichment) uygulanıp uygulanmayacağına karar veren bir teknik önermişlerdir. Derlem genişletmesi (collection enrichment) daha büyük ve yüksek kaliteli harici bir kaynağın sorgu genişletmesi işinde kullanılması anlamına gelir ve çalışmada kullanılan teknik de sorgu performans tahmini (QPP) esasındadır. Elde edilen deneysel sonuçlar, her sorgu için her zaman sorgu genişletmesi uygulamaktansa seçkili derlem genişletmesi uygulamanın anlamlı derecede başarımı arttırdığını göstermiştir. Ön işlem aşamasında odaklanılan ikinci başlık kişiselleştirmedir (personalization). Sorgu genişletmede olduğu gibi kişiselleştirmenin bazı sorguların başarımını artırdığı, bazı sorgularda da başarımı düşürdüğü rapor edilmiştir (Dou vd., 2007). Dolayısı ile seçkili kişiselleştirme (selective personalization) bir çözüm olarak önerilmiştir. Bu yöndeki ilk çalışma Teevan vd. (2008) tarafından yapılmıştır ve kişiselleştirme kararı vermek için Bayes bağımlılık ağları (Bayesian dependency networks –BDN-) esasında bir yöntem önermiştir. Bu çalışmada sorguları sınıflandırmak için 3 tür öznitelik kullanılmıştır: i) sorgu öznitelikleri ii) sorgunun döndürdüğü sonuç listesinin öznitelikleri ve iii) o sorguyla kullanıcıların etkileşim geçmişi öznitelikleri. Deneyler sonucunda, sorgu geçmişi ve sonuç listesi öznitelikleri birlikte kullanıldığında kişiselleştirme uygulanması gereken ve gerekmeyen sorguların tespitinde %80’lere varan doğruluk elde edildiği raporlanmıştır. </p>
+    <p style="font-size: 15px;"><b>İşlem/Eşleştirme odaklı çalışmalar:</b></p>
+    <p>Bu yöndeki ilk çalışmalar He ve Ounis (2003, 2004) tarafından yapılanlardır. Söz konusu çalışmalarda verilen bir sorgu için 11 adet farklı terim ağırlıklandırma modeli arasından başarımı en yüksek olacak terim ağırlıklandırma modelini seçme amaçlı yöntemler önerilmiştir. Bu yöntemler CURE ve AHC kümeleme (clustering) tekniklerini esas alan yöntemlerdir. Kümeleme işinde, sorgu temsili için 3 adet öncül sorgu başarım tahmincisi (pre-retrieval query performance predictor) kullanılmıştır. Ancak bu çalışmaların her ikisinde de seçkili yaklaşımın en başarılı tekil yaklaşıma nazaran anlamlı derecede bir başarım artışı elde edilemediği rapor edilmiştir. Bu araştırma çizgisindeki en güncel çalışma Peng ve Ounis (2009) tarafından yapılandır. Bu çalışma da indeks terim ağırlıklandırma modeli üzerine bir çalışmadır; ancak seçilen terim ağırlıklandırma modeli değil sorgu-bağımsız özniteliklerdir (mesela “page-rank”, “click-distance” veya “URL depth”). Çalışmada, verilen bir terim ağırlıklandırma modeli ile hangi sorgu-bağımsız özniteliğin bütünleştirileceğine karar verilmeye çalışılmıştır. Karar vermede Jensen–Shannon divergence ölçütü kullanılmıştır. Belirli bir terim ağırlıklandırma modeli bir sorgu-bağımsız öznitelik ile hem bütünleştirmeden önce hem de bütünleştirdikten sonra uygulanmış ve önce-sonra şeklinde iki sonuç listesi elde edilmiştir. Bu iş tüm öznitelikler için tekrar edilmiştir. En son her öznitelik için karşılık gelen önce-sonra sonuç listesi çifti üzerinden Jensen–Shannon divergence ölçütü kullanılarak bir etkinlik puanı hesaplanmış ve en yüksek puana sahip sorgu-bağımsız öznitelik seçilmiştir. Bu çalışmada herhangi bir sorgu-bağımsız öznitelik ile terim ağırlıklandırma modellerini seçkili bir şekilde bütünleştirmenin anlamlı derecede başarımı artırdığı rapor edilmiştir.</p>
+    <p style="font-size: 15px;"><b>Art-işlem odaklı çalışmalar:</b></p>
+    <p>Art-işlem odaklı çalışmalardan ilki Geng vd. (2008) tarafından yapılandır ve bu çalışmada sorgu bağımlı (belge) sıralama yaklaşımı (query dependent ranking) önerilmiştir. Belge sıralama işi için “Ranking SVM” (Ranking Support-Vector-Machine) makine öğrenim tekniği kullanılmıştır. Söz konusu çalışmada öğrenimin yapılacağı talim sorgu kümesi sorgu bazında seçilmektedir. Verilen yeni bir sorgu eldeki mevcut talim sorgu kümesi içine dâhil edilmekte ve k-NN kümeleme tekniği ile talim sorgu kümesi kümelere ayrılmaktadır. Kümelemenin ardından yeni sorguyu içeren talim sorguları kümesi üzerinde belge sıralama öğrenimi gerçekleştirilmektedir. Yeni sorgu için belirli bir terim ağırlıklandırma modeli ile yalın sonuç kümesi üretildikten sonra bu yalın sonuç listesi talim sorguları üzerinden öğrenilmiş sıralama modeli ile yeniden sıralanmaktadır. Önerilen seçkili belge sıralama yönteminin başarımı anlamlı şekilde arttırdığı rapor edilmiştir. Peng vd. (2010) aynı araştırma çizgisinde gerçekleştirdiği çalışmada Geng vd. (2008) tarafından kullanılan yeniden sıralama tekniğine (Ranking SVM) ilave olarak “AdaRank” ve “AFS” tekniklerini de ele alınmıştır. İlerleyen zaman içinde Bian vd. (2010) var olan yeniden sıralama yaklaşımının sorgu farklılıklarını dikkate almadığını belirtmiş ve sorgu farklılıklarını yeniden sıralamada hesaba katmak için bir kayıp fonksiyonu (loss function) önermişlerdir. Önerilen kayıp fonksiyonu, RankNet ve ListMLE learning-to-rank makine öğrenim yöntemlerinin eğitiminde kullanılmıştır. Önerilen kayıp fonksiyonunun yeniden sıralama işinde sorgu farklılıklarını da hesaba kattığını deneysel olarak göstermişlerdir. Art-işlem odaklı çalışmalardan bir diğeri de seçkili sorgu çeşitlendirmesidir (selective query diversification). Bu çizgide ilk çalışma Santos vd. (2010) tarafından yapılmıştır. Bu çalışmada verilen bir sorgu için en uygun çeşitlendirme stratejisi k-NN kümeleme tekniği ile seçilmiş ve sorgu temsili için dört çeşit öznitelik kullanılmıştır: i) sorgu içerik tespiti (query concept idenitification) ii) sorgu tipi tespiti (query type detection) iii) sorgu performans tahmini (query performance prediction) ve iv) sorgu log madenciliği (query log mining). Yapılan deneyler sonucunda, önerilen seçki yönteminin, bütün sorgulara tekdüze çeşitlendirme uygulandığı duruma göre, başarımı iyileştirdiği ve bu iyileşmenin çoğu kez anlamlı derecede olduğu belirtilmiştir.</p>
+    <p>Learning-to-Rank kapsamında yapılan en güncel çalışma Tonellotto vd. (2013) tarafından yapılandır. Learning-to-rank teknikleri sonuç listeleri içindeki belgelerin yeniden sıralanmaları için kullanılırlar. En basit anlatımla, geleneksel bir bilgi erişim sisteminin “çıktı”sı learning-to-rank teknikleri için “girdi”dir. Bilgi erişim başarımına katkılarının yüksekliğinin yanında learning-to-rank teknikleri çalışma zamanı cinsinden hesaplama karmaşıklığı çok yüksek yaklaşımlardır. Pratikte bu teknikleri kabul edilebilir gecikme zamanları içerisinde kullanabilmek için yeniden sıralanacak belge kümelerinin oldukça küçük tutulması gerekir. Learning-to-rank için girdi olan belge kümesindeki belge sayısına K dersek, Tonellotto vd. (2013) bu K değerini sorgu bazında seçme çalışması yapmışlardır. Literatürde bu işe dinamik budama (dynamic pruning) denir. Parametreler belirlenirken öncül sorgu başarım tahmincileri (pre-retrieval query performance predictors – QPP) ve sorgu çalışma zamanı tahmincileri (query efficiency predictors) kullanılmıştır. Kolay sorguların ve uzun sürede çalışacağı tahmin edilen sorguların daha agresif bir budamadan yararlanabileceği hipotezleri öne sürülmüştür. Söz konusu çalışmada yöntem olarak gradient boosted regression trees (GBRT) kullanılmıştır. Yapılan deneyler sonunda, K = 1000 değerlerinin tüm sorgulara tekdüze şekilde uygulanması halinde bilgi erişim başarımında kabul edilebilir bir düşüş olduğu ancak ortalama cevap verme hızının %36 oranında iyileştirilebildiği gösterilmiştir.</p>
+    <p style="font-size: 15px;"><b>Diğer çalışmalar:</b></p>
+    <p>Kim ve Kang (2003) tarafından yapılan çalışmada sınıflandırma eğitimi için kullanılacak sorgu kümesi önce 3 sınıfa ayırılmıştır: enformasyonel (Informational), gezinti amaçlı (navigational) ve işlem amaçlı (transactional). Sorgular bu üç sınıfa elle ayrılmış ve her sınıfa uygun bir bilgi erişim sistem yapılandırması seçilmiştir. Verilen yeni bir sorgu hangi sınıfa giriyorsa o sınıf için hazırlanmış sistem yapılandırması kullanılarak sorgu cevaplanmıştır. Çalışmada sorgu tipine özel ayrı bir sistem kullanmanın her sorgu için aynı sistemi kullanmaya nazaran daha yüksek başarım sağladığı rapor edilmiştir. Bu kapsamda ikinci çalışma Plachouras (2006) tarafından yapılmıştır. Bu çalışmada, verilen bir sorgu için en iyi bilgi erişim startejisi Bayes karar mekanizması (Bayesian decision mechanism) kullanılarak seçilmiştir. Çalışmada, erişim stratejisinin sorgu bazında seçilmesinin, herhangi bir bilgi erişim yaklaşımını tekdüze uygulamaya nazaran başarımı az miktarda da olsa artırdığı, ancak bu artışın en fazla iki yaklaşım arasından seçim yapıldığında elde edilebildiği; ikiden fazla yaklaşım arasından seçim yapıldığı durumda tekdüze yaklaşımın daha başarılı olduğu rapor edilmiştir. Aynı araştırma çizgisinde White vd. (2008) sorgu bazında en iyi sonuç listesini üretecek olan İnternet arama motorununun seçimi üzerine bir çalışma yapmışlardır. Seçim yapılacak olan arama motoru kümesi olarak Google, Yahoo! ve Live Search kullanılmıştır. Maximum-margin averaged perceptron makine öğrenim yöntemi kullanılarak en iyi arama motorunu seçkili olarak belirlenmiştir. Öğrenim aşamasında sorgu temsili için dört çeşit öznitelik kullanılmıştır: 1) sonuç sayfası öznitelikleri, 2) sorgu öznitelikleri, 3) eşleşme öznitelikleri ve 4) kendi adlandırmaları ile yüksek mertebeden öznitelikler (high-order features). Çalışmada, önerilen yöntemin sorgu için en doğru arama motorunu %80 üzeri bir doğrulukla tespit ettiği rapor edilmiştir. </p>
+    <p>Özetle, önceki çalışmalarda kullanılan özniteliklerin aksine bu proje çalışmasında geliştirilmesi önerilen öznitelikler, sorgular ile aday teknolojiler arasındaki ilişkiyi doğrudan nicelendirecektir. Sorgular ile aday teknolojiler arasındaki ilişkinin doğrudan kurulmasının seçkili bilgi erişim başarımı üzerinde anlamlı bir artış sağlayacağını öngörmekteyiz.  </p>
+    </div>
+  </div>
+
+    </div>
+	</div>
+</div>
+
+<div class="en" style="display:none;">
+	<div class="panel box-shadow-none content-header">
+			<div class="panel-body" id="paneltop">
+				<div class="col-md-12" id="titlecolor">
+						<h3 class="animated fadeInLeft">Content</h3>
+				</div>
+			</div>
+	</div>
+	<div class="col-md-12">
+		<div class="panel">
+			<div class="panel-body">
+	      <div class="col-md-12  article-v1-body">
+					<div class = "minheight">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

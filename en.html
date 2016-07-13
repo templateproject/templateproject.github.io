@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Miminium Admin Template v.1">
+  <meta name="author" content="Isna Nur Azis">
+  <meta name="keyword" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design of a Statistically Motivated Selective Information Retrieval System (SMSIR)</title>
+
+  <!-- start: Css -->
+  <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
+
+  <!-- plugins -->
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/font-awesome.min.css"/>
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/animate.min.css"/>
+  <link href="asset/css/style.css" rel="stylesheet">
+  <!-- end: Css -->
+
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+
+   function highlightSearch() {
+    var text = document.getElementById("query").value;
+    var query = new RegExp("(\\b" + text + "\\b)", "gim");
+    var e = document.getElementById("content").innerHTML;
+    var enew = e.replace(/(<span>|<\/span>)/igm, "");
+    document.getElementById("content").innerHTML = enew;
+    var newe = enew.replace(query, "<span>$1</span>");
+    document.getElementById("content").innerHTML = newe;
+  }
+   </script>
+  </head>
+
+  <body id="mimin" class="dashboard">
+    <!-- start: Header -->
+        <nav class="navbar navbar-default header navbar-fixed-top">
+          <div class="col-md-12 nav-wrapper">
+            <div class="navbar-header" style="width:100%;">
+              <div class="opener-left-menu is-open">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+              </div>
+                <a href="index.html" class="navbar-brand">
+                 <b class ="title">Design of a Statistically Motivated Selective Information Retrieval System (SMSIR)</b>
+                </a>
+
+              <!--<ul class="nav navbar-nav search-nav">
+                <li>
+                   <div class="search">
+
+                    <button class="btn btn-default" type="button" onClick="highlightSearch()">
+                                      <span class="fa fa-search icon-search" style="font-size:23px;"></span>
+                                    </button>
+                    <div class="form-group form-animate-text">
+                      <input type="text" class="form-text" required id ="query">
+                      <span class="bar"></span>
+                      <label class="label-search"><b>Search</b> </label>
+                    </div>
+                  </div>
+                </li>
+              </ul>-->
+
+              <ul class="nav navbar-nav navbar-right user-nav">
+                <li class="logo"><img src="asset/img/mulogoen.png" class="img-responsive" id ="mulogo"></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      <!-- end: Header -->
+
+      <div class="container-fluid mimin-wrapper">
+
+        <!-- start:Left Menu -->
+        <div id="left-menu">
+          <div class="sub-left-menu scroll">
+            <ul class="nav nav-list">
+
+
+              <li class="ripple">
+                <a href="en.html" ><span class="fa fa-home"></span> Home
+                </a>
+              </li>
+              <li class="active ripple">
+                <a href="pages/members.html" class="tree-toggle nav-header">
+                  <span class="fa fa-group"></span> Members
+                </a>
+              </li>
+              <li class="active ripple">
+                <a href="pages/events.html" class="tree-toggle nav-header">
+                  <span class="fa fa-calendar"></span> Events
+                </a>
+              </li>
+              <li class="active ripple"><a href="pages/researches.html" class="tree-toggle nav-header">
+                <span class="fa fa-pencil-square"></span> Content</a>
+
+              </li>
+              <li class="active ripple"><a href="pages/publications.html" class="tree-toggle nav-header"><span class="fa fa-book"></span> Publications  </a>
+              </li>
+              <li class="active ripple"><a href="pages/resources.html" class="tree-toggle nav-header"><span class="fa fa-folder-open"></span> Resources  </a>
+              </li>
+              <li class="active ripple"><a href="pages/links.html"><span class="fa fa-link"></span> Related Links</a></li>
+              <li class="active ripple"><a href="pages/jobs.html" class="tree-toggle nav-header"><span class="fa fa-briefcase"></span> Scholarships/Jobs  </a>
+              </li>
+               <li class="active ripple"><a href="pages/contact.html" class="tree-toggle nav-header"><span class="fa fa-envelope"></span> Concact </a>
+              </li>
+
+            </ul>
+            <div class="lang-icon">
+              <ul>
+                <li><a href="index.html"><img src="asset/img/tr.png"></a></li>
+                <li><a href="en.html"><img src="asset/img/en.png"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- end: Left Menu -->
+
+
+        <!-- start: Content -->
+        <div id="content" class="article-v1">
+            <div class="panel box-shadow-none content-header">
+                <div class="panel-body" id="paneltop">
+                  <div class="col-md-12" id="titlecolor">
+                      <h3 class="animated fadeInLeft">Project Summary</h3>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="pagecontent">
+              <div class="panel">
+                <div class="pull-right article-v1-time">
+                  <em> Information Retrieval Group</em>
+                </div>
+                  <div class="panel-body">
+                    <div class="col-md-12  article-v1-body">
+                      <p>
+                        In classical/traditional information retrieval, a single retrieval strategy is applied uniformly to all information needs (i.e., queries). However, every single retrieval strategy performs well on some queries while performing the others poorly - robustness in retrieval performance problem. On the other hand, a query that a retrieval strategy performs poorly is not necessarily performed poorly by the other retrieval strategies: for any given query, it is possible to find a retrieval strategy with satisfactory performance among existing technologies. The notion of selective information retrieval is based on this (empirical) fact. Compared to classical/traditional information retrieval, selective information retrieval promises two or three times better effectiveness on the average as well as a satisfactory performance for every query. It is unlikely for any other existing retrieval technology to effort that much improvement. Unfortunately, this potential has not been fully exploited yet. This line of information retrieval research is relatively new and the vast amount of the works is, for now, of academic type due to the lack of mature practical technologies. Nonetheless, after the initial works on the issue of robustness in retrieval performance during TREC 2003-2005 Robust Track studies, the fact that the TREC 2013 Web track addresses the same issue with a sub-task called the “Risk-Sensitive Evaluation” suggests that, sooner or later, it will eventually find its way to the market. The aim of this project is
+                      </p>
+                      <p>
+                        <ul class="list">
+                          <li>to develop a statistically motivated selective information retrieval system and</li>
+                          <li>to select the best retrieval strategy with high accuracy for any given query.</li>
+                        </ul>
+                      </p>
+                      <p>The novelty of the proposed work can be summarized as follows:</p>
+                      <p>
+                        <ul class="list">
+                          <li> taking into account the relationships among the components of information retrieval  (pre-process, matching and post-process) for selective information retrieval,</li>
+                          <li> being able to configure the retrieval strategy, on the fly, that best fits to any query given,</li>
+                          <li> exploiting a relatively large set of candidate retrieval technologies for selective retrieval,</li>
+                          <li> use of a new set of query features, to be grounded upon the theory of statistics/probability, in order to select best index term weighting model in particular and to select best retrieval strategy in general.</li>
+                        </ul>
+                      </p>
+                      <p>Since the work proposed in this project is novel, it is expected that it leads a commercial product, in case that the project is concluded with success. In addition, if the knowledge to be generated by the project is transferred to a local organization or company, it contributes to the organization’s competition power in the world-wide market. For the main product of this project, which is the core part of any information retrieval system, it is also highly likely to be used by e-commerce applications.</p>
+                      <p><b>Keywords: Selective Information Retrieval, Information Retrieval, Robustness in Retrieval Performance</b></p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- end: content -->
+      </div>
+
+      <!-- start: Mobile -->
+      <div id="mimin-mobile" class="reverse">
+      <div class="mimin-mobile-menu-list">
+          <div class="col-md-12 sub-mimin-mobile-menu-list animated fadeInLeft">
+              <ul class="nav nav-list">
+                  <li class="ripple">
+                    <a href="en.html" >
+                      <span class="fa fa-home"></span>Home
+                    </a>
+                  </li>
+                  <li class="active ripple">
+                    <a href="pages/members.html" class="tree-toggle nav-header">
+                      <span class="fa fa-group"></span>Members
+                    </a>
+                  </li>
+                  <li class="active ripple">
+                    <a href="pages/events.html" class="tree-toggle nav-header">
+                      <span class="fa fa-calendar"></span>Events
+                    </a>
+                  </li>
+                  <li class="active ripple">
+                    <a href="pages/researches.html" class="tree-toggle nav-header">
+                      <span class="fa fa-pencil-square"></span>Content
+                      <span class="fa-angle-right fa right-arrow text-right"></span>
+                    </a>
+                    <ul class="nav nav-list tree">
+                      <li><a href="#konu">Konu</a></li>
+                      <li><a href="#trtkyc">Trec Robust Kapsamında Yapılan Çalışmalar</a></li>
+                      <li><a href="#kapsam">Kapsam</a></li>
+                      <li><a href="#sbeuyc">Seçkili Bilgi Erişim Üzerine Yapılmış Çalışmalar</a></li>
+                    </ul>
+                  </li>
+                  <li class="active ripple">
+                    <a href="pages/publications.html" class="tree-toggle nav-header">
+                     <span class="fa fa-book"></span>Publications
+                    </a>
+                  </li>
+                  <li class="active ripple">
+                    <a ref="pages/resources.html" class="tree-toggle nav-header">
+                      <span class="fa fa-folder-open"></span>Resources
+                    </a>
+                  </li>
+                  <li class="active ripple">
+                    <a href="pages/links.html">
+                       <span class="fa fa-link"></span>Related Links
+                    </a>
+                  </li>
+                  <li class="active ripple">
+                    <a href="pages/jobs.html" class="tree-toggle nav-header">
+                      <span class="fa fa-briefcase"></span>Scholarships/Jobs
+                    </a>
+                  </li>
+                  <li class="active ripple">
+                    <a href="pages/contact.html" class="tree-toggle nav-header">
+                      <span class="fa fa-envelope"></span>Concact
+                    </a>
+                  </li>
+                </ul>
+          </div>
+      </div>
+      </div>
+      <button id="mimin-mobile-menu-opener" class="animated rubberBand btn btn-circle btn-danger">
+      <span class="fa fa-bars"></span>
+      </button>
+
+
+<!-- end: Content -->
+<!-- start: Javascript -->
+<script src="asset/js/jquery.min.js"></script>
+<script src="asset/js/jquery.ui.min.js"></script>
+<script src="asset/js/bootstrap.min.js"></script>
+<script src="asset/js/script.js"></script>
+
+
+<!-- plugins -->
+<script src="asset/js/plugins/moment.min.js"></script>
+<script src="asset/js/plugins/jquery.nicescroll.js"></script>
+
+
+<!-- custom -->
+<script src="asset/js/main.js"></script>
+<!-- end: Javascript -->
+</body>
+</html>
