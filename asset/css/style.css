@@ -1091,7 +1091,7 @@ ul li a:focus {
   .badge-danger {
     color: #fff !important;
     border: none !important;
-    background-color: #FF6656 !important;
+    background-color: #58666e !important;
   }
 
   .btn-warning,
@@ -5632,6 +5632,7 @@ ul li a:focus {
   outline: none !important;
   z-index: 9999999;
   display: none
+
 }
 
 #mimin-mobile a{
@@ -5639,11 +5640,11 @@ ul li a:focus {
   padding-right: 0px;
 }
 #mimin-mobile a:hover{
-  background: #ef5949;
+  background-color:#bfccd9
 }
 #mimin-mobile .tree{
   padding-left: 10px;
-  background: #ef5949;
+  background: #58666e;
 }
 .sub-mimin-mobile-menu-list {
   display: none;
@@ -5651,7 +5652,7 @@ ul li a:focus {
   height: 100%;
   font-weight: 100;
   overflow: auto;
-  font-size: 2em;
+  font-size: 1em;
 }
 
 .sub-mimin-mobile-menu-list .fa{margin-right: 10px;}
@@ -5665,7 +5666,7 @@ ul li a:focus {
 }
 
 #mimin-mobile .ink {
-  background: #FF6656;
+  background: #58666e;
 }
 
 #mimin-mobile .ink.animate {
@@ -6541,6 +6542,9 @@ ul li a:focus {
 }
 .minheight{
   height:660px;
+}
+.resources{
+  font-family: serif;
 }
 
 @media (min-width:992px) { /* choose your min-width this is using the md- default */

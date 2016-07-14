@@ -239,7 +239,7 @@
 
             rippler.css({'z-index':9999});
             rippler.animate({
-              backgroundColor: "#FF6656",
+              backgroundColor: "#58666e",
               width: '100%'
             }, 750 );
 
@@ -305,6 +305,21 @@
             hwacceleration:true,
             autohidemode:"hidden"
         });
+        $(".active").on("click",function(){
+          $("#mimin-mobile").toggleClass("reverse");
+          var rippler = $("#mimin-mobile");
+          rippler.animate({
+            backgroundColor: "transparent",
+            'z-index':'-1'
+          }, 750 );
+
+          $("#mimin-mobile .ink").on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+          function(e){
+            $("#mimin-mobile-menu-opener span").removeClass("fa-close").addClass("fa-bars").css({"font-size":"1em"});
+            $(".sub-mimin-mobile-menu-list").hide();
+          });
+        });
+
 
     $(".fileupload-v1-btn").on("click",function(){
       var wrapper = $(this).parent("span").parent("div");
@@ -331,18 +346,28 @@
         datetime2 = $('.time p');
         update();
         setInterval(update, 1000);
-		//------ -------fixed menu & content margin------------
-		var h =	$('#top-navbar-header').height()
-		$('#content').css('margin-top', h)
-		$('#sub-left-menu-div').css('margin-top',h-55)
-		$(window).on('resize', function(){
-			h =	$('#top-navbar-header').height()
-			$('#content').css('margin-top', h)
-      $('#sub-left-menu-div').css('margin-top',h-55)
-		})
-		//-----------------------------------------------------
+    		//------ -------fixed menu & content margin------------
+    		var h =	$('#top-navbar-header').height()
+    		$('#content').css('margin-top', h)
+    		$('#sub-left-menu-div').css('margin-top',h-55)
+    		$(window).on('resize', function(){
+    			h =	$('#top-navbar-header').height()
+    			$('#content').css('margin-top', h)
+          $('#sub-left-menu-div').css('margin-top',h-55)
+    		})
+        // ------------ smooth scrooling -----------------
+        $('a[href^="#"]').on('click',function (e) {
+          e.preventDefault();
 
+          var target = this.hash;
+          var $target = $(target);
 
+          $('html, body').stop().animate({
+              'scrollTop': $target.offset().top - h
+          }, 900, 'swing', function () {
+              window.location.hash = $target.offset().top - h;
+          });
+        });//-----------end of smooth scrooling---------------
     });
 
 
